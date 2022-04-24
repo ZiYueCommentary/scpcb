@@ -1,12 +1,24 @@
-# SCP - Containment Breach
+# SCP - Containment Breach TSS
 
-The game is based on the works of the SCP Foundation community (http://www.scp-wiki.net/).
+## How to build
 
-This game and the source code are licensed under Creative Commons Attribution-ShareAlike 3.0 License.
+1. Install [Blitz3D TSS(ZiYueCommentary)](https://github.com/ZiYueCommentary/Blitz3D).
 
-http://creativecommons.org/licenses/by-sa/3.0/
+1. Put all `.decls` files into `userlib` folder of Blitz3D TSS.
 
-Requirements:
-•	Blitz3D v1.108
+1. Open `Main.bb` with Blitz3D TSS and build it.
+
+## Different with vanilla
+
+* "Mav less" no more.
+* Removed update checker.
+* Removed "B3D Converter".
+* Removed "LightMapPNG".
+* Change engine to Blitz3D TSS.
+
+### Removed libs
+* AAText
+* zlibwapi
+* FMod
 
 Beware - the source code is perhaps more horrifying than the game itself!
