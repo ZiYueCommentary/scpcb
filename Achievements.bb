@@ -50,11 +50,11 @@ End Function
 Function AchievementTooltip(achvno%)
     Local scale# = GraphicHeight/768.0
     
-    AASetFont Font3
-    Local width = AAStringWidth(AchievementStrings(achvno))
-    AASetFont Font1
-    If (AAStringWidth(AchievementDescs(achvno))>width) Then
-        width = AAStringWidth(AchievementDescs(achvno))
+    SetFont Font3
+    Local width = StringWidth(AchievementStrings(achvno))
+    SetFont Font1
+    If (StringWidth(AchievementDescs(achvno))>width) Then
+        width = StringWidth(AchievementDescs(achvno))
     EndIf
     width = width+20*MenuScale
     
@@ -64,10 +64,10 @@ Function AchievementTooltip(achvno%)
     Rect(ScaledMouseX()+(20*MenuScale),ScaledMouseY()+(20*MenuScale),width,height,True)
     Color 150,150,150
     Rect(ScaledMouseX()+(20*MenuScale),ScaledMouseY()+(20*MenuScale),width,height,False)
-    AASetFont Font3
-    AAText(ScaledMouseX()+(20*MenuScale)+(width/2),ScaledMouseY()+(35*MenuScale), AchievementStrings(achvno), True, True)
-    AASetFont Font1
-    AAText(ScaledMouseX()+(20*MenuScale)+(width/2),ScaledMouseY()+(55*MenuScale), AchievementDescs(achvno), True, True)
+    SetFont Font3
+    Text(ScaledMouseX()+(20*MenuScale)+(width/2),ScaledMouseY()+(35*MenuScale), AchievementStrings(achvno), True, True)
+    SetFont Font1
+    Text(ScaledMouseX()+(20*MenuScale)+(width/2),ScaledMouseY()+(55*MenuScale), AchievementDescs(achvno), True, True)
 End Function
 
 Function DrawAchvIMG(x%, y%, achvno%)
@@ -150,7 +150,7 @@ Function UpdateAchievementMsg()
 			Color 50,50,50
 			Rect(x+10*scale,y+10*scale,64*scale,64*scale,False)
 			Color 255,255,255
-			AASetFont Font1
+			SetFont Font1
 			RowText("Achievement Unlocked - "+amsg\txt,x+84*scale,y+10*scale,width-94*scale,y-20*scale)
 			If amsg\msgtime > 0.0 And amsg\msgtime < 70*7
 				amsg\msgtime = amsg\msgtime + FPSfactor2

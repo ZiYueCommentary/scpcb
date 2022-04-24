@@ -1998,7 +1998,7 @@ Function LoadSaveGames()
 	CatchErrors("Uncaught (LoadSaveGames)")
 	SaveGameAmount = 0
 	If FileType(SavePath)=1 Then RuntimeError "Can't create dir "+Chr(34)+SavePath+Chr(34)
-	If FileType(SavePath)=0 Then CreateDir(SavePath)
+	If FileType(SavePath)=0 Then CreateDir(ConvertToANSI(SavePath))
 	myDir=ReadDir(SavePath) 
 	Repeat 
 		file$=NextFile$(myDir) 

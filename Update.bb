@@ -657,7 +657,7 @@ Function CheckForUpdates()
 		CloseFile(ChangeLogFile)
 		DeleteFile("Changelog_Prev.txt")
 		
-		UpdaterFont = LoadFont("GFX\font\cour\Courier New.ttf",16,0,0,0)
+		UpdaterFont = LoadFont("GFX\font\cour\Courier New.ttf",16)
 		
 		Repeat
 			SetBuffer BackBuffer()

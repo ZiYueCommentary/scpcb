@@ -1,6 +1,8 @@
 Graphics 640,480,0,2
 SetBuffer BackBuffer()
 
+SetFont LoadFont("GFX\font\cour\Courier New.ttf")
+
 Cls
 
 Color 255,255,255
