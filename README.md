@@ -10,7 +10,7 @@
 
 ## Different with vanilla
 
-* "Mav less" no more.
+* No more "Mav less".
 * Removed update checker.
 * Removed "B3D Converter".
 * Removed "LightMapPNG".
@@ -19,6 +19,5 @@
 ### Removed libs
 * AAText
 * zlibwapi
-* FMod
 
 Beware - the source code is perhaps more horrifying than the game itself!
