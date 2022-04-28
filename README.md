@@ -13,6 +13,7 @@ A version that can compile with Blitz3D TSS.
 ## Different with vanilla
 
 * Support UTF-8(Blitz3D TSS)
+* Typewriting support
 
 ### Removed
 * Mav less
@@ -23,7 +24,3 @@ A version that can compile with Blitz3D TSS.
 
 ## Tips
 * Updater can replace with function `DownloadFile` in [Blitz3D TSS](https://github.com/ZiYueCommentary/Blitz3D).
-
-## Todo
-
-- [ ] Typewritting support

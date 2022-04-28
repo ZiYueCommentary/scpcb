@@ -13,9 +13,9 @@ Function SaveGame(file$)
 	Local x%, y%, i%, temp%
 	Local n.NPCs, r.Rooms, do.Doors
 	
-	CreateDir(file)
+	CreateDir(ConvertToANSI(file))
 	
-	Local f% = WriteFile(file + "save.txt")
+	Local f% = WriteFile(ConvertToANSI(file) + "save.txt")
 	
 	WriteString f, CurrentTime()
 	WriteString f, CurrentDate()

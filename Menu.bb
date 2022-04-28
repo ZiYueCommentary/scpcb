@@ -1570,26 +1570,6 @@ Function DrawLoading(percent%, shortloading=False)
 End Function
 
 
-
-Function rInput$(aString$)
-	Local value% = GetKey()
-	Local length% = Len(aString$)
-	
-	If value = 8 Then
-		value = 0
-		If length > 0 Then aString$ = Left(aString, length - 1)
-	EndIf
-	
-	If value = 13 Or value = 0 Then
-		Return aString$
-	ElseIf value > 0 And value < 7 Or value > 26 And value < 32 Or value = 9
-		Return aString$
-	Else
-		aString$ = aString$ + Chr(value)
-		Return aString$
-	End If
-End Function
-
 Function InputBox$(x%, y%, width%, height%, Txt$, ID% = 0)
 	;TextBox(x,y,width,height,Txt$)
 	Color (255, 255, 255)
@@ -1610,7 +1590,7 @@ Function InputBox$(x%, y%, width%, height%, Txt$, ID% = 0)
 	If (Not MouseOnBox) And MouseHit1 And SelectedInputBox = ID Then SelectedInputBox = 0
 	
 	If SelectedInputBox = ID Then
-		Txt = rInput(Txt)
+		Txt = TextInput(Txt)
 		If (MilliSecs2() Mod 800) < 400 Then Rect (x + width / 2 + StringWidth(Txt) / 2 + 2, y + height / 2 - 5, 2, 12)
 	EndIf	
 	
