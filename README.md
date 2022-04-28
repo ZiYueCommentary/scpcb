@@ -1,5 +1,7 @@
 # SCP - Containment Breach TSS
 
+A version that can compile with Blitz3D TSS.
+
 ## How to build
 
 1. Install [Blitz3D TSS(ZiYueCommentary)](https://github.com/ZiYueCommentary/Blitz3D).
@@ -10,14 +12,18 @@
 
 ## Different with vanilla
 
-* No more "Mav less".
-* Removed update checker.
-* Removed "B3D Converter".
-* Removed "LightMapPNG".
-* Change engine to Blitz3D TSS.
+* Support UTF-8(Blitz3D TSS)
 
-### Removed libs
+### Removed
+* Mav less
+* Updater
+* B3D Converter
+* LightMapPNG
 * AAText
-* zlibwapi
 
-Beware - the source code is perhaps more horrifying than the game itself!
+## Tips
+* Updater can replace with function `DownloadFile` in [Blitz3D TSS](https://github.com/ZiYueCommentary/Blitz3D).
+
+## Todo
+
+- [ ] Typewritting support
