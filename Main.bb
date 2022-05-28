@@ -8,7 +8,6 @@
 ;    See Credits.txt for a list of contributors
 
 Local InitErrorStr$ = ""
-;If FileSize("bb_fmod.dll")=0 Then InitErrorStr=InitErrorStr+ "bb_fmod.dll"+Chr(13)+Chr(10)
 If FileSize("dplayx.dll")=0 Then InitErrorStr=InitErrorStr+ "dplayx.dll"+Chr(13)+Chr(10)
 If FileSize("FreeImage.dll")=0 Then InitErrorStr=InitErrorStr+ "FreeImage.dll"+Chr(13)+Chr(10)
 
@@ -213,10 +212,6 @@ Global SelectedLoadingScreen.LoadingScreens, LoadingScreenAmount%, LoadingScreen
 Global LoadingBack% = LoadImage_Strict("Loadingscreens\loadingback.jpg")
 InitLoadingScreens("Loadingscreens\loadingscreens.ini")
 
-;For some reason, Blitz3D doesn't load fonts that have filenames that
-;don't match their "internal name" (i.e. their display name in applications
-;like Word and such). As a workaround, I moved the files and renamed them so they
-;can load without FastText.
 Font1% = LoadFont("GFX\font\cour\Courier New.ttf", Int(16 * (GraphicHeight / 1024.0)))
 Font2% = LoadFont("GFX\font\cour\Courier New.ttf", Int(55 * (GraphicHeight / 1024.0)))
 Font3% = LoadFont("GFX\font\DS-DIGI\DS-Digital.ttf", Int(19 * (GraphicHeight / 1024.0)))

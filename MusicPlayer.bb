@@ -5,6 +5,7 @@ AppTitle "SCP:CB Music Player"
 Graphics 800,600,0,2
 SetBuffer BackBuffer()
 
+DisableClose()
 alInitialise()
 
 Global CurrMusicWindow%=0
@@ -59,6 +60,8 @@ Global x#,y#,width#,height#
 
 Global PrevBarTime# = 0.0, CurrBarTime# = 0.0
 Global CurrPitch# = 1.0
+
+SetFont LoadFont("GFX\font\cour\Courier New.ttf")
 
 Repeat
 	Cls
@@ -270,14 +273,6 @@ Function Button%(x,y,width,height,txt$, disabled%=False)
 	Color 0,0,0
 	
 	If Pushed And MouseHit1 Then Return True
-End Function
-
-Function Min#(a#,b#)
-	If a < b Then Return a Else Return b
-End Function
-
-Function Max#(a#,b#)
-	If a > b Then Return a Else Return b
 End Function
 
 Function f2s$(n#, count%)
