@@ -1123,7 +1123,7 @@ Function UpdateLauncher()
 	Next
 	
 	BlinkMeterIMG% = LoadImage_Strict("GFX\blinkmeter.jpg")
-	;CheckForUpdates()
+	CheckForUpdates()
 	
 	AppTitle "SCP - Containment Breach Launcher"
 	
@@ -1770,7 +1770,7 @@ Function RowText2(A$, X, Y, W, H, align% = 0, Leading#=1)
 	Local b$
 	
 	While Len(A) > 0
-		Local space = Instr(A$, " ")
+		Local space = Instr(A$, "")
 		If space = 0 Then space = Len(A$)
 		Local temp$ = Left(A$, space)
 		Local trimmed$ = Trim(temp) ;we might ignore a final space 
