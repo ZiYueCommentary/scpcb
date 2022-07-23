@@ -33,7 +33,7 @@ Function CheckForUpdates%()
 	If versionTXT != VersionNumber Then ;diffirent with game version...
 		DebugLog "Newer version!"
 		DownloadFile("https://filesamples.com/samples/document/txt/sample1.txt", "changelog_website.txt") ;download changelog(this is a sample file)
-		Local ChangeLogFile% = ReadFile("changelog_website.txt") ;读取文件
+		Local ChangeLogFile% = ReadFile("changelog_website.txt") ;read file
 		
 		UpdaterBG = LoadImage_Strict("GFX\menu\updater.jpg")
 		UpdaterIMG = CreateImage(452,254)
@@ -62,11 +62,11 @@ Function CheckForUpdates%()
 			chl.ChangeLogLines = New ChangeLogLines
 			chl\txt$ = "Changelog download failed."
 			chl.ChangeLogLines = New ChangeLogLines
-			chl\txt$ = "Latest Version："+versionTXT
+			chl\txt$ = "Latest Version： "+versionTXT
 			chl.ChangeLogLines = New ChangeLogLines
-			chl\txt$ = "Update Date："+dateTXT
+			chl\txt$ = "Update Date： "+dateTXT
 			chl.ChangeLogLines = New ChangeLogLines
-			chl\txt$ = "Changelog link：https://scpcbgame.cn/changelog.txt"
+			chl\txt$ = "Changelog link: https://scpcbgame.cn/changelog.txt"
 		EndIf
 		UpdaterFont = LoadFont_Strict("GFX\font\cour\Courier New.ttf",16)
 		

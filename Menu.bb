@@ -1218,12 +1218,12 @@ Function UpdateLauncher()
 			EndIf
 		Else
 			Text(40+ 260 + 15, 262 - 55 + 140, "Current Resolution: "+GfxModeWidths(SelectedGFXMode) + "x" + GfxModeHeights(SelectedGFXMode) + ",32")
-			If GfxModeWidths(SelectedGFXMode)<G_viewport_width Then
+			If GfxModeWidths(SelectedGFXMode)<DesktopWidth() Then
 				Text(40+ 260 + 65, 262 - 55 + 160, "(upscaled to")
-				Text(40+ 260 + 65, 262 - 55 + 180, G_viewport_width + "x" + G_viewport_height + ",32)")
-			ElseIf GfxModeWidths(SelectedGFXMode)>G_viewport_width Then
+				Text(40+ 260 + 65, 262 - 55 + 180, DesktopWidth() + "x" + DesktopHeight() + ",32)")
+			ElseIf GfxModeWidths(SelectedGFXMode)>DesktopWidth() Then
 				Text(40+ 260 + 65, 262 - 55 + 160, "(downscaled to")
-				Text(40+ 260 + 65, 262 - 55 + 180, G_viewport_width + "x" + G_viewport_height + ",32)")
+				Text(40+ 260 + 65, 262 - 55 + 180, DesktopWidth() + "x" + DesktopHeight() + ",32)")
 			EndIf
 		EndIf
 		

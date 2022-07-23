@@ -16,7 +16,6 @@ If Len(InitErrorStr)>0 Then
 EndIf
 
 Include "StrictLoads.bb"
-Include "fullscreen_window_fix.bb"
 Include "KeyName.bb"
 
 Global OptionFile$ = "options.ini"
@@ -105,9 +104,9 @@ If LauncherEnabled Then
 	;New "fake fullscreen" - ENDSHN Psst, it's called borderless windowed mode --Love Mark,
 	If BorderlessWindowed
 		DebugLog "Using Borderless Windowed Mode"
-		Graphics3DExt G_viewport_width, G_viewport_height, 0, 4
-		RealGraphicWidth = G_viewport_width
-		RealGraphicHeight = G_viewport_height
+		Graphics3DExt DesktopWidth(), DesktopHeight(), 0, 4
+		RealGraphicWidth = DesktopWidth()
+		RealGraphicHeight = DesktopHeight()
 		
 		AspectRatioRatio = (Float(GraphicWidth)/Float(GraphicHeight))/(Float(RealGraphicWidth)/Float(RealGraphicHeight))
 		
@@ -143,10 +142,10 @@ Else
 	;New "fake fullscreen" - ENDSHN Psst, it's called borderless windowed mode --Love Mark,
 	If BorderlessWindowed
 		DebugLog "Using Faked Fullscreen"
-		Graphics3DExt G_viewport_width, G_viewport_height, 0, 4
+		Graphics3DExt DesktopWidth(), DesktopHeight(), 0, 4
 		
-		RealGraphicWidth = G_viewport_width
-		RealGraphicHeight = G_viewport_height
+		RealGraphicWidth = DesktopWidth()
+		RealGraphicHeight = DesktopHeight()
 		
 		AspectRatioRatio = (Float(GraphicWidth)/Float(GraphicHeight))/(Float(RealGraphicWidth)/Float(RealGraphicHeight))
 		
@@ -6709,7 +6708,7 @@ Function DrawGUI()
 							EndIf
 							
 							Local SCPs_found% = 0
-							If SelectedItem\itemtemplate\name = "S-NAV Navigator Ultimate" And (MilliSecs2() Mod 600) < 400 Then
+							If SelectedItem\itemtemplate\name = "S-NAV Navigator Ultimate" ;And (MilliSecs2() Mod 600) < 400 Then
 								If Curr173<>Null Then
 									Local dist# = EntityDistance(Camera, Curr173\obj)
 									dist = Ceil(dist / 8.0) * 8.0
