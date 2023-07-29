@@ -1,5 +1,7 @@
 
 Function SaveGame(file$)
+	file = ConvertToANSI(file)
+
 	CatchErrors("Uncaught (SaveGame)")
 	
 	If Not Playable Then Return ;don't save if the player can't move at all
@@ -13,9 +15,9 @@ Function SaveGame(file$)
 	Local x%, y%, i%, temp%
 	Local n.NPCs, r.Rooms, do.Doors
 	
-	CreateDir(ConvertToANSI(file))
+	CreateDir(file)
 	
-	Local f% = WriteFile(ConvertToANSI(file) + "save.txt")
+	Local f% = WriteFile(file + "save.txt")
 	
 	WriteString f, CurrentTime()
 	WriteString f, CurrentDate()
@@ -480,8 +482,8 @@ Function LoadGame(file$)
 	GameSaved = True
 	
 	Local x#, y#, z#, i%, temp%, strtemp$, r.Rooms, id%, n.NPCs, do.Doors
-	Local f% = ReadFile(file + "save.txt")
-	
+	Local f% = ReadFile(ConvertToANSI(file) + "save.txt")
+
 	strtemp = ReadString(f)
 	strtemp = ReadString(f)
 	
@@ -1287,7 +1289,7 @@ Function LoadGameQuick(file$)
 	
 	Local x#, y#, z#, i%, temp%, strtemp$, id%
 	Local player_x#,player_y#,player_z#, r.Rooms, n.NPCs, do.Doors
-	Local f% = ReadFile(file + "save.txt")
+	Local f% = ReadFile(ConvertToANSI(file) + "save.txt")
 	
 	strtemp = ReadString(f)
 	strtemp = ReadString(f)
@@ -1998,7 +2000,7 @@ Function LoadSaveGames()
 	CatchErrors("Uncaught (LoadSaveGames)")
 	SaveGameAmount = 0
 	If FileType(SavePath)=1 Then RuntimeError "Can't create dir "+Chr(34)+SavePath+Chr(34)
-	If FileType(SavePath)=0 Then CreateDir(ConvertToANSI(SavePath))
+	If FileType(SavePath)=0 Then CreateDir(SavePath)
 	myDir=ReadDir(SavePath) 
 	Repeat 
 		file$=NextFile$(myDir) 
@@ -2023,7 +2025,7 @@ Function LoadSaveGames()
 		If FileType(SavePath+"\"+file$) = 2 Then 
 			If file <> "." And file <> ".." Then 
 				If (FileType(SavePath + file + "\save.txt")>0) Then
-					SaveGames(i) = file
+					SaveGames(i) = ConvertToUTF8(file)
 					i=i+1
 				EndIf
 			EndIf
@@ -2035,8 +2037,8 @@ Function LoadSaveGames()
 	Dim SaveGameDate$(SaveGameAmount + 1)
 	Dim SaveGameVersion$(SaveGameAmount + 1)
 	For i = 1 To SaveGameAmount
-		DebugLog (SavePath + SaveGames(i - 1) + "\save.txt")
-		Local f% = ReadFile(SavePath + SaveGames(i - 1) + "\save.txt")
+		DebugLog (SavePath + ConvertToANSI(SaveGames(i - 1)) + "\save.txt")
+		Local f% = ReadFile(SavePath + ConvertToANSI(SaveGames(i - 1)) + "\save.txt")
 		SaveGameTime(i - 1) = ReadString(f)
 		SaveGameDate(i - 1) = ReadString(f)
 		;Skip all data until the CompatibleVersion number
@@ -2100,10 +2102,10 @@ Function LoadSavedMaps()
 		If FileType(CurrentDir()+"Map Creator\Maps\"+file$) = 1 Then 
 			If file <> "." And file <> ".." Then
 				If Right(file,6)="cbmap2" Or Right(file,5)="cbmap" Then
-					SavedMaps(i) = file
+					SavedMaps(i) = ConvertToUTF8(file)
 					If Right(file,6)="cbmap2" Then
 						Local f = ReadFile("Map Creator\Maps\"+file)
-						SavedMapsAuthor$(i) = ReadLine(f)
+						SavedMapsAuthor$(i) = ConvertToUTF8(ReadLine(f))
 						CloseFile f
 					Else
 						SavedMapsAuthor$(i) = "[Unknown]"

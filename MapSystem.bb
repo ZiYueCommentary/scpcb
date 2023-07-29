@@ -5983,7 +5983,7 @@ Function InitWayPoints(loadingstart=45)
 		Next
 	Next
 	
-	DebugLog "InitWaypoints() - "+(MilliSecs2()-temper)
+	DebugLog "InitWaypoints() - "+(MilliSecs()-temper)
 	
 End Function
 
@@ -6576,7 +6576,7 @@ Function UpdateSecurityCams()
 							EntityTexture(sc\ScrOverlay, OldAiPics(0))
 						End If
 						
-						If (MilliSecs2() Mod sc\PlayerState) >= Rand(600) Then
+						If (MilliSecs() Mod sc\PlayerState) >= Rand(600) Then
 							EntityTexture(sc\ScrOverlay, MonitorTexture)
 						Else
 							If sc\soundCHN = 0 Then
@@ -8200,7 +8200,7 @@ Function SetChunkDataValues()
 		Next
 	Next
 	
-	SeedRnd MilliSecs2()
+	SeedRnd MilliSecs()
 	
 End Function
 
@@ -8256,7 +8256,7 @@ Function CreateChunkParts(r.Rooms)
 		EndIf
 	Next
 	
-	SeedRnd MilliSecs2()
+	SeedRnd MilliSecs()
 	
 End Function
 
