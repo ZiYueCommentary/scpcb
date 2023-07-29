@@ -1,8 +1,6 @@
 # SCP - Containment Breach TSS
 
-A version that can compile with Blitz3D TSS.
-
-*This is a **template** for developers, this not cotain much characteristic.*
+The template of modding vanilia game on Blitz3D TSS.
 
 ## How to build
 
