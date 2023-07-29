@@ -10784,22 +10784,6 @@ Function CircleToLineSegIsect% (cx#, cy#, r#, l1x#, l1y#, l2x#, l2y#)
 	Return True
 End Function
 
-Function Min#(a#, b#)
-	If a < b Then
-		Return a
-	Else
-		Return b
-	EndIf
-End Function
-
-Function Max#(a#, b#)
-	If a > b Then
-		Return a
-	Else
-		Return b
-	EndIf
-End Function
-
 Function point_direction#(x1#,z1#,x2#,z2#)
 	Local dx#, dz#
 	dx = x1 - x2
