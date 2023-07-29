@@ -1703,14 +1703,6 @@ Function INI_CreateKey%(INI_lFileHandle%, INI_sKey$, INI_sValue$)
 	
 End Function
 
-Function Min#(a#,b#)
-	If a < b Then Return a Else Return b
-End Function
-
-Function Max#(a#,b#)
-	If a > b Then Return a Else Return b
-End Function
-
 Function Button%(x,y,width,height,txt$, disabled%=False)
 	Local Pushed = False
 	
