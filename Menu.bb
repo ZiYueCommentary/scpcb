@@ -261,7 +261,7 @@ Function UpdateMainMenu()
 				
 				Color(255, 255, 255)
 				AASetFont Font2
-				AAText(x + width / 2, y + height / 2, "NEW GAME", True, True)
+				AAText(x + width / 2, y + height / 2 - 3, "NEW GAME", True, True)
 				
 				x = 160 * MenuScale
 				y = y + height + 20 * MenuScale
@@ -418,7 +418,7 @@ Function UpdateMainMenu()
 				
 				Color(255, 255, 255)
 				AASetFont Font2
-				AAText(x + width / 2, y + height / 2, "LOAD GAME", True, True)
+				AAText(x + width / 2, y + height / 2 - 3, "LOAD GAME", True, True)
 				
 				x = 160 * MenuScale
 				y = y + height + 20 * MenuScale
@@ -551,7 +551,7 @@ Function UpdateMainMenu()
 				
 				Color(255, 255, 255)
 				AASetFont Font2
-				AAText(x + width / 2, y + height / 2, "OPTIONS", True, True)
+				AAText(x + width / 2, y + height / 2 - 3, "OPTIONS", True, True)
 				
 				x = 160 * MenuScale
 				y = y + height + 20 * MenuScale
@@ -1026,7 +1026,7 @@ Function UpdateMainMenu()
 				
 				Color(255, 255, 255)
 				AASetFont Font2
-				AAText(x + width / 2, y + height / 2, "LOAD MAP", True, True)
+				AAText(x + width / 2, y + height / 2 - 3, "LOAD MAP", True, True)
 				
 				x = 160 * MenuScale
 				y = y + height + 20 * MenuScale
@@ -1631,7 +1631,7 @@ Function InputBox$(x%, y%, width%, height%, Txt$, ID% = 0)
 		If (MilliSecs() Mod 800) < 400 Then Rect (x + width / 2 + AAStringWidth(Txt) / 2 + 2, y + height / 2 - 5, 2, 12)
 	EndIf	
 	
-	AAText(x + width / 2, y + height / 2, Txt, True, True)
+	AAText(x + width / 2, y + height / 2 - 3, Txt, True, True)
 	
 	Return Txt
 End Function
@@ -1661,10 +1661,10 @@ Function DrawButton%(x%, y%, width%, height%, txt$, bigfont% = True, waitForMous
 	Color (255, 255, 255)
 	If usingAA Then
 		If bigfont Then AASetFont Font2 Else AASetFont Font1
-		AAText(x + width / 2, y + height / 2, txt, True, True)
+		AAText(x + width / 2, y + height / 2 - 3, txt, True, True)
 	Else
 		If bigfont Then SetFont Font2 Else SetFont Font1
-		Text(x + width / 2, y + height / 2, txt, True, True)
+		Text(x + width / 2, y + height / 2 - 3, txt, True, True)
 	EndIf
 	
 	Return clicked
@@ -1685,7 +1685,7 @@ Function DrawButton2%(x%, y%, width%, height%, txt$, bigfont% = True)
 	
 	Color (255, 255, 255)
 	If bigfont Then SetFont Font2 Else SetFont Font1
-	Text(x + width / 2, y + height / 2, txt, True, True)
+	Text(x + width / 2, y + height / 2 - 3, txt, True, True)
 	
 	Return clicked
 End Function
@@ -2593,7 +2593,7 @@ Function Button%(x,y,width,height,txt$, disabled%=False)
 	
 	Color 255,255,255
 	If disabled Then Color 70,70,70
-	Text x+width/2, y+height/2-1*MenuScale, txt, True, True
+	Text x+width/2, (y+height/2-1*MenuScale), txt, True, True
 	
 	Color 0,0,0
 	

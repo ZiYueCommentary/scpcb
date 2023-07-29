@@ -191,7 +191,7 @@ Global GameSaved%
 
 Global CanSave% = True
 
-AppTitle "SCP - Containment Breach v"+VersionNumber
+AppTitle "SCP - Containment Breach TSS v"+VersionNumber
 
 PlayStartupVideos()
 
@@ -7206,23 +7206,23 @@ Function DrawMenu()
 
 		If AchievementsMenu > 0 Then
 			AASetFont Font2
-			AAText(x, y-(122-45)*MenuScale, "ACHIEVEMENTS",False,True)
+			AAText(x, y-(122-45)*MenuScale - 3, "ACHIEVEMENTS",False,True)
 			AASetFont Font1
 		ElseIf OptionsMenu > 0 Then
 			AASetFont Font2
-			AAText(x, y-(122-45)*MenuScale, "OPTIONS",False,True)
+			AAText(x, y-(122-45)*MenuScale - 3, "OPTIONS",False,True)
 			AASetFont Font1
 		ElseIf QuitMSG > 0 Then
 			AASetFont Font2
-			AAText(x, y-(122-45)*MenuScale, "QUIT?",False,True)
+			AAText(x, y-(122-45)*MenuScale - 3, "QUIT?",False,True)
 			AASetFont Font1
 		ElseIf KillTimer >= 0 Then
 			AASetFont Font2
-			AAText(x, y-(122-45)*MenuScale, "PAUSED",False,True)
+			AAText(x, y-(122-45)*MenuScale - 3, "PAUSED",False,True)
 			AASetFont Font1
 		Else
 			AASetFont Font2
-			AAText(x, y-(122-45)*MenuScale, "YOU DIED",False,True)
+			AAText(x, y-(122-45)*MenuScale - 3, "YOU DIED",False,True)
 			AASetFont Font1
 		End If
 
@@ -7765,7 +7765,7 @@ Function DrawMenu()
 						DrawFrame(x,y,390*MenuScale, 60*MenuScale)
 						Color (100, 100, 100)
 						AASetFont Font2
-						AAText(x + (390*MenuScale) / 2, y + (60*MenuScale) / 2, "Load Game", True, True)
+						AAText(x + (390*MenuScale) / 2, y + (60*MenuScale) / 2 - 3, "Load Game", True, True)
 					EndIf
 					y = y + 75*MenuScale
 				EndIf
@@ -7820,7 +7820,7 @@ Function DrawMenu()
 				Else
 					DrawButton(x, y, 390*MenuScale, 60*MenuScale, "")
 					Color 50,50,50
-					AAText(x + 185*MenuScale, y + 30*MenuScale, "Load Game", True, True)
+					AAText(x + 185*MenuScale, y + 30*MenuScale - 3, "Load Game", True, True)
 				EndIf
 				If DrawButton(x, y + 80*MenuScale, 390*MenuScale, 60*MenuScale, "Quit to Menu") Then
 					NullGame()
@@ -12089,6 +12089,10 @@ Function RotateEntity90DegreeAngles(entity%)
 
 End Function
 
+; Temporary solution for now
+Function Text(x%, y%, txt$, x_pos% = 0, y_pos% = 0)
+	Blitz_Text(x, y + 3, txt, x_pos, y_pos)
+End Function
 
 
 
