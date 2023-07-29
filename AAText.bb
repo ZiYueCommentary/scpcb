@@ -216,7 +216,7 @@ Function AAText(x%,y%,txt$,cx%=False,cy%=False,a#=1.0)
 	If ark_blur_cam<>0 Then ShowEntity ark_blur_cam
 End Function
 
-Function AALoadFont%(file$="Tahoma", height=13, bold=0, italic=0, underline=0, AATextScaleFactor%=2)
+Function AALoadFont%(file$="Tahoma", height=13, AATextScaleFactor%=2)
 	Local newFont.AAFont = New AAFont
 	
 	newFont\lowResFont = LoadFont(file,height)

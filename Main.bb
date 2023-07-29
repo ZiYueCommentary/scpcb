@@ -210,15 +210,15 @@ InitAAFont()
 ;don't match their "internal name" (i.e. their display name in applications
 ;like Word and such). As a workaround, I moved the files and renamed them so they
 ;can load without FastText.
-Font1% = AALoadFont("GFX\font\cour\Courier New.ttf", Int(19 * (GraphicHeight / 1024.0)), 0,0,0)
-Font2% = AALoadFont("GFX\font\cour\Courier New.ttf", Int(58 * (GraphicHeight / 1024.0)), 0,0,0)
-Font3% = AALoadFont("GFX\font\DS-DIGI\DS-Digital.ttf", Int(22 * (GraphicHeight / 1024.0)), 0,0,0)
-Font4% = AALoadFont("GFX\font\DS-DIGI\DS-Digital.ttf", Int(60 * (GraphicHeight / 1024.0)), 0,0,0)
-Font5% = AALoadFont("GFX\font\Journal\Journal.ttf", Int(58 * (GraphicHeight / 1024.0)), 0,0,0)
+Font1% = AALoadFont("GFX\font\cour\Courier New.ttf", Int(19 * (GraphicHeight / 1024.0)))
+Font2% = AALoadFont("GFX\font\cour\Courier New.ttf", Int(58 * (GraphicHeight / 1024.0)))
+Font3% = AALoadFont("GFX\font\DS-DIGI\DS-Digital.ttf", Int(22 * (GraphicHeight / 1024.0)))
+Font4% = AALoadFont("GFX\font\DS-DIGI\DS-Digital.ttf", Int(60 * (GraphicHeight / 1024.0)))
+Font5% = AALoadFont("GFX\font\Journal\Journal.ttf", Int(58 * (GraphicHeight / 1024.0)))
 
 Global CreditsFont%,CreditsFont2%
 
-ConsoleFont% = AALoadFont("GFX\font\cour\Courier New.ttf", Int(20 * (GraphicHeight / 1024.0)), 0,0,0,1)
+ConsoleFont% = AALoadFont("GFX\font\cour\Courier New.ttf", Int(20 * (GraphicHeight / 1024.0)), 1)
 
 AASetFont Font2
 
@@ -7607,12 +7607,12 @@ Function DrawMenu()
 							;Next
 						EndIf
 						InitAAFont()
-						Font1% = AALoadFont("GFX\font\cour\Courier New.ttf", Int(16 * (GraphicHeight / 1024.0)), 0,0,0)
-						Font2% = AALoadFont("GFX\font\courbd\Courier New.ttf", Int(56 * (GraphicHeight / 1024.0)), 0,0,0)
-						Font3% = AALoadFont("GFX\font\DS-DIGI\DS-Digital.ttf", Int(20 * (GraphicHeight / 1024.0)), 0,0,0)
-						Font4% = AALoadFont("GFX\font\DS-DIGI\DS-Digital.ttf", Int(58 * (GraphicHeight / 1024.0)), 0,0,0)
-						Font5% = AALoadFont("GFX\font\Journal\Journal.ttf", Int(56 * (GraphicHeight / 1024.0)), 0,0,0)
-						ConsoleFont% = AALoadFont("GFX\font\cour\Courier New.ttf", Int(20 * (GraphicHeight / 1024.0)), 0,0,0,1)
+						Font1% = AALoadFont("GFX\font\cour\Courier New.ttf", Int(19 * (GraphicHeight / 1024.0)))
+						Font2% = AALoadFont("GFX\font\cour\Courier New.ttf", Int(58 * (GraphicHeight / 1024.0)))
+						Font3% = AALoadFont("GFX\font\DS-DIGI\DS-Digital.ttf", Int(22 * (GraphicHeight / 1024.0)))
+						Font4% = AALoadFont("GFX\font\DS-DIGI\DS-Digital.ttf", Int(60 * (GraphicHeight / 1024.0)))
+						Font5% = AALoadFont("GFX\font\Journal\Journal.ttf", Int(58 * (GraphicHeight / 1024.0)))
+						ConsoleFont% = AALoadFont("GFX\font\cour\Courier New.ttf", Int(20 * (GraphicHeight / 1024.0)),1)
 						;ReloadAAFont()
 						AATextEnable_Prev% = AATextEnable
 					EndIf
