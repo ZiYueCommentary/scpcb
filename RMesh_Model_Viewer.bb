@@ -1,7 +1,5 @@
 Global XE_XF,XE_MAXtextures
 
-SetFont LoadFont("GFX\font\cour\Courier New.ttf")
-
 Type XE_texdata
 	Field idx,h,fn$
 End Type
@@ -716,7 +714,7 @@ Print ""
 Local fname$ = Input("RMesh To load: ")
 
 Graphics3D 1280,720,32,2
-SetFont LoadFont("GFX\font\cour\Courier New.ttf")
+
 ;Global bump% = LoadTexture("scpcb/gfx/map/tilebump.jpg")
 ;TextureBlend bump,6
 ;TextureBumpEnvMat bump,0,0,1.009
