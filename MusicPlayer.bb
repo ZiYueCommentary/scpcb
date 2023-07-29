@@ -61,8 +61,6 @@ Global x#,y#,width#,height#
 Global PrevBarTime# = 0.0, CurrBarTime# = 0.0
 Global CurrPitch# = 1.0
 
-SetFont LoadFont("GFX\font\cour\Courier New.ttf")
-
 Repeat
 	Cls
 	ClsColor 200,200,200
