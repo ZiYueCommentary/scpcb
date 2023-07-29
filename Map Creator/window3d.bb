@@ -141,22 +141,22 @@ MXS#=180
 Const GameUPS=60 ; Updates per second
 Global Period#=1000.0/GameUPS
 
-Global PrevTime% = MilliSecs2()
+Global PrevTime% = MilliSecs()
 Global ElapsedTime#
 
 Repeat
 	Cls
 	If ShowFPS
-		If CheckFPS < MilliSecs2() Then
+		If CheckFPS < MilliSecs() Then
 			FPS = ElapsedLoops
 			ElapsedLoops = 0
-			CheckFPS = MilliSecs2()+1000
+			CheckFPS = MilliSecs()+1000
 		EndIf
 		ElapsedLoops = ElapsedLoops + 1
 	EndIf
 	
-	ElapsedTime = ElapsedTime+Float(MilliSecs2()-PrevTime)/Float(Period)
-	PrevTime = MilliSecs2()
+	ElapsedTime = ElapsedTime+Float(MilliSecs()-PrevTime)/Float(Period)
+	PrevTime = MilliSecs()
 	
 	Local f%
 	Local prevAdjDoorPlace = AdjDoorPlace
@@ -488,7 +488,7 @@ Repeat
 					If CurrMapGrid<>1 Then
 						If PickedEntity()=GetChild(r\obj,2)
 							SetBuffer TextureBuffer(r\overlaytex)
-							ClsColor 70,70,20+(Float(Sin(MilliSecs2()/4.0))*20)
+							ClsColor 70,70,20+(Float(Sin(MilliSecs()/4.0))*20)
 							Cls
 							SetBuffer BackBuffer()
 							PickedRoom = r
@@ -498,7 +498,7 @@ Repeat
 					Else
 						If PickedEntity()=r\obj
 							SetBuffer TextureBuffer(r\overlaytex)
-							ClsColor 60,60,50-(Float(Sin(MilliSecs2()/4.0))*50)
+							ClsColor 60,60,50-(Float(Sin(MilliSecs()/4.0))*50)
 							Cls
 							SetBuffer BackBuffer()
 							PickedRoom = r
@@ -1801,12 +1801,6 @@ Function rInput$(aString$)
 	aString$=aString$ + Chr$(value)
 	.ende
 	Return aString$
-End Function
-
-Function MilliSecs2()
-	Local retVal% = MilliSecs()
-	If retVal < 0 Then retVal = retVal + 2147483648
-	Return retVal
 End Function
 
 Function WrapAngle#(angle#)
